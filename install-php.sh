@@ -20,12 +20,16 @@ if [ ! -d $PROJECT_PATH ]; then
     exit 1
 fi
 
-WEBSITE_PATH="/var/www/html/$DOMAIN"
+WEBSITE_PATH="/var/www/$DOMAIN"
 
-# sudo chown -R www-data:www-data $PROJECT_PATH
-# sudo chmod -R 0755 $PROJECT_PATH
 
 mv $PROJECT_PATH $WEBSITE_PATH
+
+sudo chown -R wwww-data:www-data $WEBSITE_PATH/storage
+sudo chown -R wwww-data:www-data $WEBSITE_PATH/bootstrap/cache
+
+sudo chmod -R 0775 $WEBSITE_PATH/storage
+sudo chmod -R 0775 $WEBSITE_PATH/bootstrap/cache
 
 # create symlink to project folder
 ln -s $WEBSITE_PATH $PROJECT_PATH
