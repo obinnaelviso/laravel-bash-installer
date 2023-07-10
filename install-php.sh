@@ -25,8 +25,8 @@ WEBSITE_PATH="/var/www/$DOMAIN"
 
 mv $PROJECT_PATH $WEBSITE_PATH
 
-sudo chown -R wwww-data:www-data $WEBSITE_PATH/storage
-sudo chown -R wwww-data:www-data $WEBSITE_PATH/bootstrap/cache
+sudo chown -R www-data:www-data $WEBSITE_PATH/storage
+sudo chown -R www-data:www-data $WEBSITE_PATH/bootstrap/cache
 
 sudo chmod -R 0775 $WEBSITE_PATH/storage
 sudo chmod -R 0775 $WEBSITE_PATH/bootstrap/cache
